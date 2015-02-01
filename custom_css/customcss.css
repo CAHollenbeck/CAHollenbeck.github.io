@@ -1,0 +1,65 @@
+body {
+  padding-top: 50px;
+  background:black;
+  min-height:800px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+H1 {
+color:#E0E0E0;
+}
+H3 {
+color:#F0F0F0;
+}
+H2 {
+color:#F0F0F0;
+}
+p {
+  color:#989898;
+}
+
+.artnav {
+width:100%;
+}
+
+.artthumb {
+min-width:260px;
+min-height:300px;
+width:45%;
+height:48%;
+margin:auto;
+}
+
+
+.inactive {
+color:#787878;
+}
+
+.flright {
+width:50%;
+float:right;
+padding-bottom:3em;
+text-align:left;
+padding-left:6em;
+}
+.flleft{
+width:50%;
+float:left;
+padding-bottom:3em;
+text-align:right;
+padding-right:2em;
+}
+.tleft{
+text-align:left;
+}
+
+.bug{
+background:yellow;
+}
+
+.w {
+color:white !important;
+}
+
