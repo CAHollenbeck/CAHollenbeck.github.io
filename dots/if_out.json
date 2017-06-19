@@ -1,0 +1,227 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "group": 1,
+      "sootmethod": "<If: void main(java.lang.String[])>",
+      "node_class": "If",
+      "method": "main",
+      "sootStmt": "r0 := @parameter0: java.lang.String[]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 2,
+      "group": 1,
+      "sootmethod": "<If: void main(java.lang.String[])>",
+      "node_class": "If",
+      "method": "main",
+      "sootStmt": "$r1 = r0[0]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 3,
+      "group": 1,
+      "sootmethod": "<If: void main(java.lang.String[])>",
+      "node_class": "If",
+      "method": "main",
+      "sootStmt": "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 5,
+      "group": 1,
+      "sootmethod": "<If: void main(java.lang.String[])>",
+      "node_class": "If",
+      "method": "main",
+      "sootStmt": "staticinvoke <If: void if_method(int)>(i0)",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 4,
+      "group": 1,
+      "sootmethod": "N/A",
+      "node_class": "N/A",
+      "method": "N/A",
+      "sootStmt": "N/A",
+      "params": "N/A"
+    },
+    {
+      "id": 6,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "i0 := @parameter0: int",
+      "params": "int"
+    },
+    {
+      "id": 7,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "if i0 <= 1 goto $r0 = <java.lang.System: java.io.PrintStream out>",
+      "params": "int"
+    },
+    {
+      "id": 8,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "$r0 = <java.lang.System: java.io.PrintStream out>",
+      "params": "int"
+    },
+    {
+      "id": 9,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "$r1 = <java.lang.System: java.io.PrintStream out>",
+      "params": "int"
+    },
+    {
+      "id": 10,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>(\"false!\")",
+      "params": "int"
+    },
+    {
+      "id": 11,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "return",
+      "params": "int"
+    },
+    {
+      "id": 12,
+      "group": 1,
+      "sootmethod": "<If: void main(java.lang.String[])>",
+      "node_class": "If",
+      "method": "main",
+      "sootStmt": "return",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 13,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>(\"true!\")",
+      "params": "int"
+    },
+    {
+      "id": 14,
+      "group": 1,
+      "sootmethod": "<If: void if_method(int)>",
+      "node_class": "If",
+      "method": "if_method",
+      "sootStmt": "goto [?= return]",
+      "params": "int"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "value": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 8,
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "value": 1
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "value": 1
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 11,
+      "value": 1
+    }
+  ]
+}

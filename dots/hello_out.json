@@ -1,0 +1,100 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "group": 1,
+      "sootmethod": "<Hello: void main(java.lang.String[])>",
+      "node_class": "Hello",
+      "method": "main",
+      "sootStmt": "r0 := @parameter0: java.lang.String[]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 2,
+      "group": 1,
+      "sootmethod": "<Hello: void main(java.lang.String[])>",
+      "node_class": "Hello",
+      "method": "main",
+      "sootStmt": "$i0 = lengthof r0",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 3,
+      "group": 1,
+      "sootmethod": "<Hello: void main(java.lang.String[])>",
+      "node_class": "Hello",
+      "method": "main",
+      "sootStmt": "if $i0 <= 1 goto return",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 4,
+      "group": 1,
+      "sootmethod": "<Hello: void main(java.lang.String[])>",
+      "node_class": "Hello",
+      "method": "main",
+      "sootStmt": "return",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 5,
+      "group": 1,
+      "sootmethod": "<Hello: void main(java.lang.String[])>",
+      "node_class": "Hello",
+      "method": "main",
+      "sootStmt": "$r1 = <java.lang.System: java.io.PrintStream out>",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 6,
+      "group": 1,
+      "sootmethod": "<Hello: void main(java.lang.String[])>",
+      "node_class": "Hello",
+      "method": "main",
+      "sootStmt": "virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>(\"Hello World\")",
+      "params": "java.lang.String[]"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "value": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "value": 1
+    }
+  ]
+}

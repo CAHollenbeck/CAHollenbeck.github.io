@@ -1,0 +1,203 @@
+[ {
+  "state" : {
+    "id" : 1,
+    "index" : 0,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "r0 := @parameter0: java.lang.String[]"
+  }
+}, {
+  "state" : {
+    "id" : 2,
+    "index" : 1,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r1 = r0[0]"
+  }
+}, {
+  "edge" : {
+    "id" : 0,
+    "source" : 1,
+    "destination" : 2
+  }
+}, {
+  "state" : {
+    "id" : 3,
+    "index" : 2,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)"
+  }
+}, {
+  "edge" : {
+    "id" : 1,
+    "source" : 2,
+    "destination" : 3
+  }
+}, {
+  "edge" : {
+    "id" : 2,
+    "source" : 3,
+    "destination" : 3
+  }
+}, {
+  "state" : {
+    "id" : 5,
+    "index" : 3,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "$i1 = i0 / 2"
+  }
+}, {
+  "errorState" : {
+    "id" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 3,
+    "source" : 3,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 4,
+    "source" : 3,
+    "destination" : 4
+  }
+}, {
+  "state" : {
+    "id" : 6,
+    "index" : 4,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "if $i1 != 0 goto i0 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 5,
+    "source" : 5,
+    "destination" : 6
+  }
+}, {
+  "edge" : {
+    "id" : 6,
+    "source" : 5,
+    "destination" : 4
+  }
+}, {
+  "state" : {
+    "id" : 7,
+    "index" : 7,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = i0 - 1"
+  }
+}, {
+  "state" : {
+    "id" : 8,
+    "index" : 5,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r2 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 7,
+    "source" : 6,
+    "destination" : 7
+  }
+}, {
+  "edge" : {
+    "id" : 8,
+    "source" : 6,
+    "destination" : 8
+  }
+}, {
+  "state" : {
+    "id" : 9,
+    "index" : 8,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "goto [?= $i1 = i0 / 2]"
+  }
+}, {
+  "edge" : {
+    "id" : 9,
+    "source" : 7,
+    "destination" : 9
+  }
+}, {
+  "edge" : {
+    "id" : 10,
+    "source" : 9,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 11,
+    "source" : 8,
+    "destination" : 8
+  }
+}, {
+  "state" : {
+    "id" : 10,
+    "index" : 6,
+    "class" : "WhileIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIf: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>(\"even!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 12,
+    "source" : 8,
+    "destination" : 10
+  }
+}, {
+  "edge" : {
+    "id" : 13,
+    "source" : 10,
+    "destination" : 10
+  }
+}, {
+  "edge" : {
+    "id" : 14,
+    "source" : 10,
+    "destination" : 7
+  }
+} ]

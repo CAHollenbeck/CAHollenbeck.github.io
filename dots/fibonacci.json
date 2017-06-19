@@ -1,0 +1,659 @@
+[ {
+  "state" : {
+    "id" : 1,
+    "index" : 0,
+    "class" : "Fibonacci",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Fibonacci: void main(java.lang.String[])>",
+    "sootStmt" : "r0 := @parameter0: java.lang.String[]"
+  }
+}, {
+  "state" : {
+    "id" : 2,
+    "index" : 1,
+    "class" : "Fibonacci",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Fibonacci: void main(java.lang.String[])>",
+    "sootStmt" : "$r1 = r0[0]"
+  }
+}, {
+  "edge" : {
+    "id" : 0,
+    "source" : 1,
+    "destination" : 2
+  }
+}, {
+  "state" : {
+    "id" : 3,
+    "index" : 2,
+    "class" : "Fibonacci",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Fibonacci: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)"
+  }
+}, {
+  "edge" : {
+    "id" : 1,
+    "source" : 2,
+    "destination" : 3
+  }
+}, {
+  "edge" : {
+    "id" : 2,
+    "source" : 3,
+    "destination" : 3
+  }
+}, {
+  "state" : {
+    "id" : 5,
+    "index" : 3,
+    "class" : "Fibonacci",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Fibonacci: void main(java.lang.String[])>",
+    "sootStmt" : "staticinvoke <Fibonacci: int fibonacci(int)>(i0)"
+  }
+}, {
+  "errorState" : {
+    "id" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 3,
+    "source" : 3,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 4,
+    "source" : 3,
+    "destination" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 5,
+    "source" : 5,
+    "destination" : 5
+  }
+}, {
+  "state" : {
+    "id" : 6,
+    "index" : 0,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "i0 := @parameter0: int"
+  }
+}, {
+  "edge" : {
+    "id" : 6,
+    "source" : 5,
+    "destination" : 6
+  }
+}, {
+  "state" : {
+    "id" : 7,
+    "index" : 1,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "if i0 > 1 goto $i1 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 7,
+    "source" : 6,
+    "destination" : 7
+  }
+}, {
+  "state" : {
+    "id" : 8,
+    "index" : 3,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i1 = i0 - 1"
+  }
+}, {
+  "state" : {
+    "id" : 9,
+    "index" : 2,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "return i0"
+  }
+}, {
+  "edge" : {
+    "id" : 8,
+    "source" : 7,
+    "destination" : 8
+  }
+}, {
+  "edge" : {
+    "id" : 9,
+    "source" : 7,
+    "destination" : 9
+  }
+}, {
+  "state" : {
+    "id" : 10,
+    "index" : 4,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i2 = staticinvoke <Fibonacci: int fibonacci(int)>($i1)"
+  }
+}, {
+  "edge" : {
+    "id" : 10,
+    "source" : 8,
+    "destination" : 10
+  }
+}, {
+  "state" : {
+    "id" : 11,
+    "index" : 0,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "i0 := @parameter0: int"
+  }
+}, {
+  "edge" : {
+    "id" : 11,
+    "source" : 10,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 12,
+    "index" : 1,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "if i0 > 1 goto $i1 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 12,
+    "source" : 11,
+    "destination" : 12
+  }
+}, {
+  "state" : {
+    "id" : 13,
+    "index" : 3,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i1 = i0 - 1"
+  }
+}, {
+  "state" : {
+    "id" : 14,
+    "index" : 2,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "return i0"
+  }
+}, {
+  "edge" : {
+    "id" : 13,
+    "source" : 12,
+    "destination" : 13
+  }
+}, {
+  "edge" : {
+    "id" : 14,
+    "source" : 12,
+    "destination" : 14
+  }
+}, {
+  "state" : {
+    "id" : 15,
+    "index" : 4,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i2 = staticinvoke <Fibonacci: int fibonacci(int)>($i1)"
+  }
+}, {
+  "edge" : {
+    "id" : 15,
+    "source" : 13,
+    "destination" : 15
+  }
+}, {
+  "edge" : {
+    "id" : 16,
+    "source" : 15,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 16,
+    "index" : 5,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i3 = i0 - 2"
+  }
+}, {
+  "state" : {
+    "id" : 17,
+    "index" : 5,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i3 = i0 - 2"
+  }
+}, {
+  "edge" : {
+    "id" : 17,
+    "source" : 14,
+    "destination" : 16
+  }
+}, {
+  "edge" : {
+    "id" : 18,
+    "source" : 14,
+    "destination" : 17
+  }
+}, {
+  "state" : {
+    "id" : 18,
+    "index" : 6,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i4 = staticinvoke <Fibonacci: int fibonacci(int)>($i3)"
+  }
+}, {
+  "edge" : {
+    "id" : 19,
+    "source" : 16,
+    "destination" : 18
+  }
+}, {
+  "state" : {
+    "id" : 19,
+    "index" : 0,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "i0 := @parameter0: int"
+  }
+}, {
+  "edge" : {
+    "id" : 20,
+    "source" : 18,
+    "destination" : 19
+  }
+}, {
+  "state" : {
+    "id" : 20,
+    "index" : 1,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "if i0 > 1 goto $i1 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 21,
+    "source" : 19,
+    "destination" : 20
+  }
+}, {
+  "state" : {
+    "id" : 21,
+    "index" : 3,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i1 = i0 - 1"
+  }
+}, {
+  "state" : {
+    "id" : 22,
+    "index" : 2,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "return i0"
+  }
+}, {
+  "edge" : {
+    "id" : 22,
+    "source" : 20,
+    "destination" : 21
+  }
+}, {
+  "edge" : {
+    "id" : 23,
+    "source" : 20,
+    "destination" : 22
+  }
+}, {
+  "state" : {
+    "id" : 23,
+    "index" : 4,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i2 = staticinvoke <Fibonacci: int fibonacci(int)>($i1)"
+  }
+}, {
+  "edge" : {
+    "id" : 24,
+    "source" : 21,
+    "destination" : 23
+  }
+}, {
+  "edge" : {
+    "id" : 25,
+    "source" : 23,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 24,
+    "index" : 5,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i3 = i0 - 2"
+  }
+}, {
+  "edge" : {
+    "id" : 26,
+    "source" : 14,
+    "destination" : 24
+  }
+}, {
+  "state" : {
+    "id" : 25,
+    "index" : 6,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i4 = staticinvoke <Fibonacci: int fibonacci(int)>($i3)"
+  }
+}, {
+  "edge" : {
+    "id" : 27,
+    "source" : 17,
+    "destination" : 25
+  }
+}, {
+  "edge" : {
+    "id" : 28,
+    "source" : 25,
+    "destination" : 19
+  }
+}, {
+  "state" : {
+    "id" : 26,
+    "index" : 6,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i4 = staticinvoke <Fibonacci: int fibonacci(int)>($i3)"
+  }
+}, {
+  "edge" : {
+    "id" : 29,
+    "source" : 24,
+    "destination" : 26
+  }
+}, {
+  "edge" : {
+    "id" : 30,
+    "source" : 26,
+    "destination" : 19
+  }
+}, {
+  "state" : {
+    "id" : 27,
+    "index" : 7,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i5 = $i2 + $i4"
+  }
+}, {
+  "state" : {
+    "id" : 28,
+    "index" : 7,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i5 = $i2 + $i4"
+  }
+}, {
+  "state" : {
+    "id" : 29,
+    "index" : 7,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "$i5 = $i2 + $i4"
+  }
+}, {
+  "edge" : {
+    "id" : 31,
+    "source" : 22,
+    "destination" : 27
+  }
+}, {
+  "edge" : {
+    "id" : 32,
+    "source" : 22,
+    "destination" : 28
+  }
+}, {
+  "edge" : {
+    "id" : 33,
+    "source" : 22,
+    "destination" : 29
+  }
+}, {
+  "state" : {
+    "id" : 30,
+    "index" : 8,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "return $i5"
+  }
+}, {
+  "edge" : {
+    "id" : 34,
+    "source" : 27,
+    "destination" : 30
+  }
+}, {
+  "state" : {
+    "id" : 31,
+    "index" : 4,
+    "class" : "Fibonacci",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Fibonacci: void main(java.lang.String[])>",
+    "sootStmt" : "return"
+  }
+}, {
+  "edge" : {
+    "id" : 35,
+    "source" : 30,
+    "destination" : 31
+  }
+}, {
+  "state" : {
+    "id" : 32,
+    "index" : 8,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "return $i5"
+  }
+}, {
+  "edge" : {
+    "id" : 36,
+    "source" : 28,
+    "destination" : 32
+  }
+}, {
+  "edge" : {
+    "id" : 37,
+    "source" : 32,
+    "destination" : 16
+  }
+}, {
+  "edge" : {
+    "id" : 38,
+    "source" : 32,
+    "destination" : 17
+  }
+}, {
+  "edge" : {
+    "id" : 39,
+    "source" : 32,
+    "destination" : 24
+  }
+}, {
+  "state" : {
+    "id" : 33,
+    "index" : 8,
+    "class" : "Fibonacci",
+    "method" : "fibonacci",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Fibonacci: int fibonacci(int)>",
+    "sootStmt" : "return $i5"
+  }
+}, {
+  "edge" : {
+    "id" : 40,
+    "source" : 29,
+    "destination" : 33
+  }
+}, {
+  "edge" : {
+    "id" : 41,
+    "source" : 33,
+    "destination" : 27
+  }
+}, {
+  "edge" : {
+    "id" : 42,
+    "source" : 33,
+    "destination" : 28
+  }
+}, {
+  "edge" : {
+    "id" : 43,
+    "source" : 33,
+    "destination" : 29
+  }
+}, {
+  "edge" : {
+    "id" : 44,
+    "source" : 9,
+    "destination" : 31
+  }
+} ]

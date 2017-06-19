@@ -1,0 +1,528 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "group": 1,
+      "sootmethod": "<Fibonacci: void main(java.lang.String[])>",
+      "node_class": "Fibonacci",
+      "method": "main",
+      "sootStmt": "r0 := @parameter0: java.lang.String[]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 2,
+      "group": 1,
+      "sootmethod": "<Fibonacci: void main(java.lang.String[])>",
+      "node_class": "Fibonacci",
+      "method": "main",
+      "sootStmt": "$r1 = r0[0]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 3,
+      "group": 1,
+      "sootmethod": "<Fibonacci: void main(java.lang.String[])>",
+      "node_class": "Fibonacci",
+      "method": "main",
+      "sootStmt": "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 5,
+      "group": 1,
+      "sootmethod": "<Fibonacci: void main(java.lang.String[])>",
+      "node_class": "Fibonacci",
+      "method": "main",
+      "sootStmt": "staticinvoke <Fibonacci: int fibonacci(int)>(i0)",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 4,
+      "group": 1,
+      "sootmethod": "N/A",
+      "node_class": "N/A",
+      "method": "N/A",
+      "sootStmt": "N/A",
+      "params": "N/A"
+    },
+    {
+      "id": 6,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "i0 := @parameter0: int",
+      "params": "int"
+    },
+    {
+      "id": 7,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "if i0 > 1 goto $i1 = i0 - 1",
+      "params": "int"
+    },
+    {
+      "id": 8,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i1 = i0 - 1",
+      "params": "int"
+    },
+    {
+      "id": 9,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "return i0",
+      "params": "int"
+    },
+    {
+      "id": 10,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i2 = staticinvoke <Fibonacci: int fibonacci(int)>($i1)",
+      "params": "int"
+    },
+    {
+      "id": 11,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "i0 := @parameter0: int",
+      "params": "int"
+    },
+    {
+      "id": 12,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "if i0 > 1 goto $i1 = i0 - 1",
+      "params": "int"
+    },
+    {
+      "id": 13,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i1 = i0 - 1",
+      "params": "int"
+    },
+    {
+      "id": 14,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "return i0",
+      "params": "int"
+    },
+    {
+      "id": 15,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i2 = staticinvoke <Fibonacci: int fibonacci(int)>($i1)",
+      "params": "int"
+    },
+    {
+      "id": 16,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i3 = i0 - 2",
+      "params": "int"
+    },
+    {
+      "id": 17,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i3 = i0 - 2",
+      "params": "int"
+    },
+    {
+      "id": 18,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i4 = staticinvoke <Fibonacci: int fibonacci(int)>($i3)",
+      "params": "int"
+    },
+    {
+      "id": 19,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "i0 := @parameter0: int",
+      "params": "int"
+    },
+    {
+      "id": 20,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "if i0 > 1 goto $i1 = i0 - 1",
+      "params": "int"
+    },
+    {
+      "id": 21,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i1 = i0 - 1",
+      "params": "int"
+    },
+    {
+      "id": 22,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "return i0",
+      "params": "int"
+    },
+    {
+      "id": 23,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i2 = staticinvoke <Fibonacci: int fibonacci(int)>($i1)",
+      "params": "int"
+    },
+    {
+      "id": 24,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i3 = i0 - 2",
+      "params": "int"
+    },
+    {
+      "id": 25,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i4 = staticinvoke <Fibonacci: int fibonacci(int)>($i3)",
+      "params": "int"
+    },
+    {
+      "id": 26,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i4 = staticinvoke <Fibonacci: int fibonacci(int)>($i3)",
+      "params": "int"
+    },
+    {
+      "id": 27,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i5 = $i2 + $i4",
+      "params": "int"
+    },
+    {
+      "id": 28,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i5 = $i2 + $i4",
+      "params": "int"
+    },
+    {
+      "id": 29,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "$i5 = $i2 + $i4",
+      "params": "int"
+    },
+    {
+      "id": 30,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "return $i5",
+      "params": "int"
+    },
+    {
+      "id": 31,
+      "group": 1,
+      "sootmethod": "<Fibonacci: void main(java.lang.String[])>",
+      "node_class": "Fibonacci",
+      "method": "main",
+      "sootStmt": "return",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 32,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "return $i5",
+      "params": "int"
+    },
+    {
+      "id": 33,
+      "group": 1,
+      "sootmethod": "<Fibonacci: int fibonacci(int)>",
+      "node_class": "Fibonacci",
+      "method": "fibonacci",
+      "sootStmt": "return $i5",
+      "params": "int"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "value": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "value": 1
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 17,
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 18,
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 19,
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 21,
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 22,
+      "value": 1
+    },
+    {
+      "source": 21,
+      "target": 23,
+      "value": 1
+    },
+    {
+      "source": 23,
+      "target": 11,
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 24,
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 25,
+      "value": 1
+    },
+    {
+      "source": 25,
+      "target": 19,
+      "value": 1
+    },
+    {
+      "source": 24,
+      "target": 26,
+      "value": 1
+    },
+    {
+      "source": 26,
+      "target": 19,
+      "value": 1
+    },
+    {
+      "source": 22,
+      "target": 27,
+      "value": 1
+    },
+    {
+      "source": 22,
+      "target": 28,
+      "value": 1
+    },
+    {
+      "source": 22,
+      "target": 29,
+      "value": 1
+    },
+    {
+      "source": 27,
+      "target": 30,
+      "value": 1
+    },
+    {
+      "source": 30,
+      "target": 31,
+      "value": 1
+    },
+    {
+      "source": 28,
+      "target": 32,
+      "value": 1
+    },
+    {
+      "source": 32,
+      "target": 16,
+      "value": 1
+    },
+    {
+      "source": 32,
+      "target": 17,
+      "value": 1
+    },
+    {
+      "source": 32,
+      "target": 24,
+      "value": 1
+    },
+    {
+      "source": 29,
+      "target": 33,
+      "value": 1
+    },
+    {
+      "source": 33,
+      "target": 27,
+      "value": 1
+    },
+    {
+      "source": 33,
+      "target": 28,
+      "value": 1
+    },
+    {
+      "source": 33,
+      "target": 29,
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 31,
+      "value": 1
+    }
+  ]
+}

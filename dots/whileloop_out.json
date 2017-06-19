@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "r0 := @parameter0: java.lang.String[]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 2,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "$r1 = r0[0]",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 3,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 5,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "if i0 >= 1000 goto return",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 4,
+      "group": 1,
+      "sootmethod": "N/A",
+      "node_class": "N/A",
+      "method": "N/A",
+      "sootStmt": "N/A",
+      "params": "N/A"
+    },
+    {
+      "id": 6,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "return",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 7,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "i0 = i0 + 1",
+      "params": "java.lang.String[]"
+    },
+    {
+      "id": 8,
+      "group": 1,
+      "sootmethod": "<Loop: void main(java.lang.String[])>",
+      "node_class": "Loop",
+      "method": "main",
+      "sootStmt": "goto [?= (branch)]",
+      "params": "java.lang.String[]"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "value": 1
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 5,
+      "value": 1
+    }
+  ]
+}

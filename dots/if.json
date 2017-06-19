@@ -1,0 +1,275 @@
+[ {
+  "state" : {
+    "id" : 1,
+    "index" : 0,
+    "class" : "If",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<If: void main(java.lang.String[])>",
+    "sootStmt" : "r0 := @parameter0: java.lang.String[]"
+  }
+}, {
+  "state" : {
+    "id" : 2,
+    "index" : 1,
+    "class" : "If",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<If: void main(java.lang.String[])>",
+    "sootStmt" : "$r1 = r0[0]"
+  }
+}, {
+  "edge" : {
+    "id" : 0,
+    "source" : 1,
+    "destination" : 2
+  }
+}, {
+  "state" : {
+    "id" : 3,
+    "index" : 2,
+    "class" : "If",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<If: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)"
+  }
+}, {
+  "edge" : {
+    "id" : 1,
+    "source" : 2,
+    "destination" : 3
+  }
+}, {
+  "edge" : {
+    "id" : 2,
+    "source" : 3,
+    "destination" : 3
+  }
+}, {
+  "state" : {
+    "id" : 5,
+    "index" : 3,
+    "class" : "If",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<If: void main(java.lang.String[])>",
+    "sootStmt" : "staticinvoke <If: void if_method(int)>(i0)"
+  }
+}, {
+  "errorState" : {
+    "id" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 3,
+    "source" : 3,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 4,
+    "source" : 3,
+    "destination" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 5,
+    "source" : 5,
+    "destination" : 5
+  }
+}, {
+  "state" : {
+    "id" : 6,
+    "index" : 0,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "i0 := @parameter0: int"
+  }
+}, {
+  "edge" : {
+    "id" : 6,
+    "source" : 5,
+    "destination" : 6
+  }
+}, {
+  "state" : {
+    "id" : 7,
+    "index" : 1,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "if i0 <= 1 goto $r0 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 7,
+    "source" : 6,
+    "destination" : 7
+  }
+}, {
+  "state" : {
+    "id" : 8,
+    "index" : 5,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "$r0 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "state" : {
+    "id" : 9,
+    "index" : 2,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "$r1 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 8,
+    "source" : 7,
+    "destination" : 8
+  }
+}, {
+  "edge" : {
+    "id" : 9,
+    "source" : 7,
+    "destination" : 9
+  }
+}, {
+  "edge" : {
+    "id" : 10,
+    "source" : 8,
+    "destination" : 8
+  }
+}, {
+  "state" : {
+    "id" : 10,
+    "index" : 6,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>(\"false!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 11,
+    "source" : 8,
+    "destination" : 10
+  }
+}, {
+  "edge" : {
+    "id" : 12,
+    "source" : 10,
+    "destination" : 10
+  }
+}, {
+  "state" : {
+    "id" : 11,
+    "index" : 7,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "return"
+  }
+}, {
+  "edge" : {
+    "id" : 13,
+    "source" : 10,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 12,
+    "index" : 4,
+    "class" : "If",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<If: void main(java.lang.String[])>",
+    "sootStmt" : "return"
+  }
+}, {
+  "edge" : {
+    "id" : 14,
+    "source" : 11,
+    "destination" : 12
+  }
+}, {
+  "state" : {
+    "id" : 13,
+    "index" : 3,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>(\"true!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 15,
+    "source" : 9,
+    "destination" : 13
+  }
+}, {
+  "edge" : {
+    "id" : 16,
+    "source" : 13,
+    "destination" : 13
+  }
+}, {
+  "state" : {
+    "id" : 14,
+    "index" : 4,
+    "class" : "If",
+    "method" : "if_method",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<If: void if_method(int)>",
+    "sootStmt" : "goto [?= return]"
+  }
+}, {
+  "edge" : {
+    "id" : 17,
+    "source" : 13,
+    "destination" : 14
+  }
+}, {
+  "edge" : {
+    "id" : 18,
+    "source" : 14,
+    "destination" : 11
+  }
+} ]

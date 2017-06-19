@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+<style>
+
+html {
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.arrow{
+  stroke-width:5;
+  stroke:#000;
+  stroke-dasharray:5,5;
+}
+
+.info {
+  background:white;
+  width:100%;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.ta {
+  width:100%;
+  font-size:1em;
+  border:none;
+  resize:none;
+}
+
+.title{
+  background:#e6e6e6;
+  /*width:100%;*/
+}
+
+#arrow{
+  stroke-width:1;
+  stroke-dasharray:0;
+}
+
+#cluster-info{
+  background:lightgray;
+  display:inline-block;
+  height:100%;
+  left:0px;
+  padding:2em;
+  position:fixed;
+  top:0px;
+
+  box-shadow: 2px 0px 1px grey;
+  word-wrap: break-word;
+}
+
+#infocontainer {
+  height:50em;
+  width:25em;
+  overflow-y:scroll;
+}
+
+#javacode {
+  display:inline-block;
+  background:white;
+  bottom:0px;
+  box-shadow: 0px 0px 2px 0px grey;
+  height:18em;
+  overflow-y:scroll;
+  padding:.5em;
+  width:100%;
+
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+#nodeinfo {
+  height:25em;
+  overflow-y:scroll;
+  margin-bottom:.5em;
+  margin-top:.5em;
+}
+
+
+#selected {
+  stroke:red;
+  stroke-width:75px;
+  stroke-opacity:0.3;
+}
+
+</style>
+</head>
+<body>
+
+<!--
+
+                     .-'   `'.
+                    /         \
+                    |         ;
+                    |         |           ___.--,
+           _.._     |0) ~ (0) |    _.---'`__.-( (_.
+    __.--'`_.. '.__.\    '--. \_.-' ,.--'`     `""`
+   ( ,.--'`   ',__ /./;   ;, '.__.'`    __
+   _`) )  .---.__.' / |   |\   \__..--""  """--.,_
+  `---' .'.''-._.-'`_./  /\ '.  \ _.-~~~````~~~-._`-.__.'
+        | |  .' _.-' |  |  \  \  '.               `~---`
+         \ \/ .'     \  \   '. '-._)
+          \/ /        \  \    `=.__`~-.
+          / /\         `) )    / / `"".`\
+    , _.-'.'\ \        / /    ( (     / /
+     `--~`   ) )    .-'.'      '.'.  | (
+            (/`    ( (`          ) )  '-;
+             `      '-;         (-'
+
+
+-->
+
+<svg width="2200" height="800"></svg>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-drag.v1.min.js"></script>
+<script src="https://d3js.org/d3-zoom.v1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+
+<script type="text/javascript">
+var selected = null;
+var jsonfile = "hello_out.json";
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = null;
+
+var transform = d3.zoomTransform(this); // new
+
+function clear_infopane() {
+  d3.select('#info-id').html("");
+  d3.select('#info-method').html("");
+  d3.select('#info-sootmethod').html("");
+  d3.select('#info-nodeclass').html("");
+  d3.select('#info-group').html("");
+  d3.select('#info-sootstmt').html("");
+  d3.select('#info-params').html("");
+}
+
+function update_infopane(id, method, sootmethod, nodeclass, group, sst, params) {
+  var errmsg = ""
+  if (sootmethod == "N/A") { errmsg = " **ERROR STATE**" }
+  d3.select('#info-id').html(get_title("NODE ID") + get_textarea(id + errmsg));
+  d3.select('#info-method').html(get_title("METHOD") + get_textarea(method));
+  d3.select('#info-sootmethod').html(get_title("SOOT METHOD") + get_textarea(sootmethod));
+  d3.select('#info-nodeclass').html(get_title("CLASS") + get_textarea(nodeclass));
+  d3.select('#info-group').html(get_title("CLUSTER ID") + get_textarea(group));
+  d3.select('#info-sootstmt').html(get_title("SOOT STATEMENT") + get_textarea(sst));
+  d3.select('#info-params').html(get_title("PARAMETERS") + get_textarea(params));
+}
+
+function get_title(item) {
+  return "<div class=\"title\">" + item + "</div>";
+}
+
+function get_textarea(item) {
+  return "<textarea readonly class=\"ta\">" + item + "</textarea>";
+}
+
+function switch_select(new_s) {
+    var last = selected;
+    selected = new_s;
+    d3.select(last).style("fill", function(d) { return get_color(d.group, d.sootmethod); });
+    d3.select(last).attr("id", "");
+    d3.select(new_s).attr("id", "selected");
+    d3.select("[searched='" + 1 + "']").attr("id", "").attr("searched", null);
+}
+
+function pan(x, y) {
+  console.log($(window).width());
+  console.log(x);
+  $('html, body').animate({
+    scrollTop: $('#selected').offset().top - $(window).height()/2
+  },300);
+  $('html, body').animate({
+    scrollLeft: x - $(window).width()/2
+  },300);
+}
+
+
+$(document).ready(function(){
+    function findnode() {
+      var last = selected;
+      var n_id = document.getElementById("searchval").value;
+      var new_select = d3.select("[node_id='" + n_id + "']");
+      console.log(new_select);
+      switch_select(new_select[0]);
+
+      new_select.attr("id", "selected").attr("searched", function(d) {
+        update_infopane(d.id, d.method, d.sootmethod, d.node_class, d.group, d.sootStmt, d.params);
+        pan(d.x, d.y);
+        return 1;
+      });
+    }
+    $("#search").click(findnode);
+});
+
+function JsChange(dropvalue) {
+  console.log("Change motif to " + dropvalue.value);
+  clear_infopane();
+  d3.selectAll("svg > *").remove();
+  jsonfile = dropvalue.value + "_out.json";
+  render();
+  
+  $( "#javacode" ).load( dropvalue.value + ".java" );
+}
+
+function get_color(group, nodeclass) {
+  if (nodeclass == "N/A") {
+    return "red";
+  }
+  else {
+    return color(group);
+  }
+}
+
+function render() { // TODO temp
+d3.json(jsonfile, function(error, graph) {
+  console.log("Render SVG: " + jsonfile);
+  if (error) {
+    console.log("Error: " + error);
+    throw error;
+  }
+
+  var nodes = {};
+
+  var oldstrength = d3.forceLink().strength();
+
+  simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }).strength(function(link) {
+      if (link.source.group == link.target.group) {
+        return 1.7;
+      }
+      else {
+        return .0001;
+      }
+    }))
+    .force("charge", d3.forceManyBody().distanceMax(1200).strength(-150))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("node", d3.forceManyBody().distanceMin(5).distanceMax(700).strength(-500)
+    );
+
+    svg.append("defs").append("marker")
+      .attr("id", "arrow")
+      .attr("refX", 22) /*must be smarter way to calculate shift*/
+      .attr("refY", 5)
+      .attr("markerWidth", 10)
+      .attr("markerHeight", 10)
+      .attr("orient", "auto")
+      .append("path")
+      .attr("d", "M0,0L10,5L0,10")
+      .attr("class", "arrowhead");
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
+      .attr("marker-end", function(d) { return "url(#arrow)" });
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 12)
+      .attr('node_id', function(d) { return d.id; })
+      .attr("fill", function(d) { return get_color(d.group, d.node_class); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended))
+  .on("click", function(d) {
+    switch_select(this);
+    update_infopane(d.id, d.method, d.sootmethod, d.node_class, d.group, d.sootStmt, d.params);
+  });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+
+  function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+  
+  update_infopane("", "", "", "", "", "", "");
+});
+}
+
+render();
+
+
+</script>
+<div id="cluster-info">
+  <select id="jsfile" onChange="JsChange(this)">
+    <option value="hello">Hello World</option>
+    <option value="nestedif">2 Level If Else</option>
+    <option value="fibonacci">Fibonacci</option>
+    <option value="if">If</option>
+    <option value="whileif">While If</option>
+    <option value="whileifelse">While If Else</option>
+    <option value="whileloop">While Loop</option>
+  </select>
+  <div id="infocontainer">
+    <div id="nodeinfo">
+      <div id="info-id" class="info"></div>
+      <div id="info-sootstmt" class="info"></div>
+      <div id="info-sootmethod" class="info"></div>
+      <div id="info-params" class="info"></div>
+      <!--<div id="info-group" class="info"></div>-->
+      <div id="info-method" class="info"></div>
+      <div id="info-nodeclass" class="info"></div>
+    </div>
+    <div id="javacode"></div>
+    <!--<input type="text" id="searchval" name="searchnode" placeholder="ID number"></input>
+    <button id="search">locate node</button>-->
+  </div>
+
+
+</div>
+
+<script>
+  $( "#javacode" ).load( "hello.java" );
+</script>
+
+</body>
+</html>

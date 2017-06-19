@@ -1,0 +1,299 @@
+[ {
+  "state" : {
+    "id" : 1,
+    "index" : 0,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "r0 := @parameter0: java.lang.String[]"
+  }
+}, {
+  "state" : {
+    "id" : 2,
+    "index" : 1,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "$r1 = r0[0]"
+  }
+}, {
+  "edge" : {
+    "id" : 0,
+    "source" : 1,
+    "destination" : 2
+  }
+}, {
+  "state" : {
+    "id" : 3,
+    "index" : 2,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)"
+  }
+}, {
+  "edge" : {
+    "id" : 1,
+    "source" : 2,
+    "destination" : 3
+  }
+}, {
+  "edge" : {
+    "id" : 2,
+    "source" : 3,
+    "destination" : 3
+  }
+}, {
+  "state" : {
+    "id" : 5,
+    "index" : 3,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "if i0 <= 25 goto return"
+  }
+}, {
+  "errorState" : {
+    "id" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 3,
+    "source" : 3,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 4,
+    "source" : 3,
+    "destination" : 4
+  }
+}, {
+  "state" : {
+    "id" : 6,
+    "index" : 13,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "return"
+  }
+}, {
+  "state" : {
+    "id" : 7,
+    "index" : 4,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "$i1 = i0 / 2"
+  }
+}, {
+  "edge" : {
+    "id" : 5,
+    "source" : 5,
+    "destination" : 6
+  }
+}, {
+  "edge" : {
+    "id" : 6,
+    "source" : 5,
+    "destination" : 7
+  }
+}, {
+  "state" : {
+    "id" : 8,
+    "index" : 5,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "if $i1 != 0 goto $r2 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 7,
+    "source" : 7,
+    "destination" : 8
+  }
+}, {
+  "edge" : {
+    "id" : 8,
+    "source" : 7,
+    "destination" : 4
+  }
+}, {
+  "state" : {
+    "id" : 9,
+    "index" : 9,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "$r2 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "state" : {
+    "id" : 10,
+    "index" : 6,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "$r3 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 9,
+    "source" : 8,
+    "destination" : 9
+  }
+}, {
+  "edge" : {
+    "id" : 10,
+    "source" : 8,
+    "destination" : 10
+  }
+}, {
+  "edge" : {
+    "id" : 11,
+    "source" : 9,
+    "destination" : 9
+  }
+}, {
+  "state" : {
+    "id" : 11,
+    "index" : 10,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>(\"odd!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 12,
+    "source" : 9,
+    "destination" : 11
+  }
+}, {
+  "edge" : {
+    "id" : 13,
+    "source" : 11,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 12,
+    "index" : 11,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 14,
+    "source" : 11,
+    "destination" : 12
+  }
+}, {
+  "state" : {
+    "id" : 13,
+    "index" : 12,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "goto [?= (branch)]"
+  }
+}, {
+  "edge" : {
+    "id" : 15,
+    "source" : 12,
+    "destination" : 13
+  }
+}, {
+  "edge" : {
+    "id" : 16,
+    "source" : 13,
+    "destination" : 5
+  }
+}, {
+  "state" : {
+    "id" : 14,
+    "index" : 7,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>(\"even!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 17,
+    "source" : 10,
+    "destination" : 14
+  }
+}, {
+  "edge" : {
+    "id" : 18,
+    "source" : 14,
+    "destination" : 14
+  }
+}, {
+  "state" : {
+    "id" : 15,
+    "index" : 8,
+    "class" : "WhileIfElse",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<WhileIfElse: void main(java.lang.String[])>",
+    "sootStmt" : "goto [?= i0 = i0 - 1]"
+  }
+}, {
+  "edge" : {
+    "id" : 19,
+    "source" : 14,
+    "destination" : 15
+  }
+}, {
+  "edge" : {
+    "id" : 20,
+    "source" : 15,
+    "destination" : 12
+  }
+} ]

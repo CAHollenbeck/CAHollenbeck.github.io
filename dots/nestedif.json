@@ -1,0 +1,383 @@
+[ {
+  "state" : {
+    "id" : 1,
+    "index" : 0,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "r0 := @parameter0: java.lang.String[]"
+  }
+}, {
+  "state" : {
+    "id" : 2,
+    "index" : 1,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r1 = r0[0]"
+  }
+}, {
+  "edge" : {
+    "id" : 0,
+    "source" : 1,
+    "destination" : 2
+  }
+}, {
+  "state" : {
+    "id" : 3,
+    "index" : 2,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1)"
+  }
+}, {
+  "edge" : {
+    "id" : 1,
+    "source" : 2,
+    "destination" : 3
+  }
+}, {
+  "edge" : {
+    "id" : 2,
+    "source" : 3,
+    "destination" : 3
+  }
+}, {
+  "state" : {
+    "id" : 5,
+    "index" : 3,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "if i0 <= 1 goto (branch)"
+  }
+}, {
+  "errorState" : {
+    "id" : 4
+  }
+}, {
+  "edge" : {
+    "id" : 3,
+    "source" : 3,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 4,
+    "source" : 3,
+    "destination" : 4
+  }
+}, {
+  "state" : {
+    "id" : 6,
+    "index" : 11,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "if i0 <= 5 goto $r2 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "state" : {
+    "id" : 7,
+    "index" : 4,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "if i0 >= 1 goto $r4 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 5,
+    "source" : 5,
+    "destination" : 6
+  }
+}, {
+  "edge" : {
+    "id" : 6,
+    "source" : 5,
+    "destination" : 7
+  }
+}, {
+  "state" : {
+    "id" : 8,
+    "index" : 15,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r2 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "state" : {
+    "id" : 9,
+    "index" : 12,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r3 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 7,
+    "source" : 6,
+    "destination" : 8
+  }
+}, {
+  "edge" : {
+    "id" : 8,
+    "source" : 6,
+    "destination" : 9
+  }
+}, {
+  "edge" : {
+    "id" : 9,
+    "source" : 8,
+    "destination" : 8
+  }
+}, {
+  "state" : {
+    "id" : 10,
+    "index" : 16,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>(\"false -> false!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 10,
+    "source" : 8,
+    "destination" : 10
+  }
+}, {
+  "edge" : {
+    "id" : 11,
+    "source" : 10,
+    "destination" : 10
+  }
+}, {
+  "state" : {
+    "id" : 11,
+    "index" : 17,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "return"
+  }
+}, {
+  "edge" : {
+    "id" : 12,
+    "source" : 10,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 12,
+    "index" : 13,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>(\"false -> true!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 13,
+    "source" : 9,
+    "destination" : 12
+  }
+}, {
+  "edge" : {
+    "id" : 14,
+    "source" : 12,
+    "destination" : 12
+  }
+}, {
+  "state" : {
+    "id" : 13,
+    "index" : 14,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "goto [?= return]"
+  }
+}, {
+  "edge" : {
+    "id" : 15,
+    "source" : 12,
+    "destination" : 13
+  }
+}, {
+  "edge" : {
+    "id" : 16,
+    "source" : 13,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 14,
+    "index" : 8,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r4 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "state" : {
+    "id" : 15,
+    "index" : 5,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "$r5 = <java.lang.System: java.io.PrintStream out>"
+  }
+}, {
+  "edge" : {
+    "id" : 17,
+    "source" : 7,
+    "destination" : 14
+  }
+}, {
+  "edge" : {
+    "id" : 18,
+    "source" : 7,
+    "destination" : 15
+  }
+}, {
+  "state" : {
+    "id" : 16,
+    "index" : 9,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r4.<java.io.PrintStream: void println(java.lang.String)>(\"true & false!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 19,
+    "source" : 14,
+    "destination" : 16
+  }
+}, {
+  "edge" : {
+    "id" : 20,
+    "source" : 16,
+    "destination" : 16
+  }
+}, {
+  "state" : {
+    "id" : 17,
+    "index" : 10,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "goto [?= return]"
+  }
+}, {
+  "edge" : {
+    "id" : 21,
+    "source" : 16,
+    "destination" : 17
+  }
+}, {
+  "edge" : {
+    "id" : 22,
+    "source" : 17,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 18,
+    "index" : 6,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "virtualinvoke $r5.<java.io.PrintStream: void println(java.lang.String)>(\"true & true!\")"
+  }
+}, {
+  "edge" : {
+    "id" : 23,
+    "source" : 15,
+    "destination" : 18
+  }
+}, {
+  "edge" : {
+    "id" : 24,
+    "source" : 18,
+    "destination" : 18
+  }
+}, {
+  "state" : {
+    "id" : 19,
+    "index" : 7,
+    "class" : "NestedIf",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<NestedIf: void main(java.lang.String[])>",
+    "sootStmt" : "goto [?= return]"
+  }
+}, {
+  "edge" : {
+    "id" : 25,
+    "source" : 18,
+    "destination" : 19
+  }
+}, {
+  "edge" : {
+    "id" : 26,
+    "source" : 19,
+    "destination" : 11
+  }
+} ]

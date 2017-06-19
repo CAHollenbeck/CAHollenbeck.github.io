@@ -1,0 +1,331 @@
+[ {
+  "state" : {
+    "id" : 1,
+    "index" : 0,
+    "class" : "Factorial",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Factorial: void main(java.lang.String[])>",
+    "sootStmt" : "r0 := @parameter0: java.lang.String[]"
+  }
+}, {
+  "state" : {
+    "id" : 2,
+    "index" : 1,
+    "class" : "Factorial",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Factorial: void main(java.lang.String[])>",
+    "sootStmt" : "staticinvoke <Factorial: int factorial(int)>(6)"
+  }
+}, {
+  "edge" : {
+    "id" : 0,
+    "source" : 1,
+    "destination" : 2
+  }
+}, {
+  "edge" : {
+    "id" : 1,
+    "source" : 2,
+    "destination" : 2
+  }
+}, {
+  "state" : {
+    "id" : 3,
+    "index" : 0,
+    "node_class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "i0 := @parameter0: int"
+  }
+}, {
+  "edge" : {
+    "id" : 2,
+    "source" : 2,
+    "destination" : 3
+  }
+}, {
+  "state" : {
+    "id" : 4,
+    "index" : 1,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "if i0 > 1 goto $i1 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 3,
+    "source" : 3,
+    "destination" : 4
+  }
+}, {
+  "state" : {
+    "id" : 5,
+    "index" : 3,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "$i1 = i0 - 1"
+  }
+}, {
+  "state" : {
+    "id" : 6,
+    "index" : 2,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "return 1"
+  }
+}, {
+  "edge" : {
+    "id" : 4,
+    "source" : 4,
+    "destination" : 5
+  }
+}, {
+  "edge" : {
+    "id" : 5,
+    "source" : 4,
+    "destination" : 6
+  }
+}, {
+  "state" : {
+    "id" : 7,
+    "index" : 4,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "$i2 = staticinvoke <Factorial: int factorial(int)>($i1)"
+  }
+}, {
+  "edge" : {
+    "id" : 6,
+    "source" : 5,
+    "destination" : 7
+  }
+}, {
+  "state" : {
+    "id" : 8,
+    "index" : 0,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "i0 := @parameter0: int"
+  }
+}, {
+  "edge" : {
+    "id" : 7,
+    "source" : 7,
+    "destination" : 8
+  }
+}, {
+  "state" : {
+    "id" : 9,
+    "index" : 1,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "if i0 > 1 goto $i1 = i0 - 1"
+  }
+}, {
+  "edge" : {
+    "id" : 8,
+    "source" : 8,
+    "destination" : 9
+  }
+}, {
+  "state" : {
+    "id" : 10,
+    "index" : 3,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "$i1 = i0 - 1"
+  }
+}, {
+  "state" : {
+    "id" : 11,
+    "index" : 2,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "return 1"
+  }
+}, {
+  "edge" : {
+    "id" : 9,
+    "source" : 9,
+    "destination" : 10
+  }
+}, {
+  "edge" : {
+    "id" : 10,
+    "source" : 9,
+    "destination" : 11
+  }
+}, {
+  "state" : {
+    "id" : 12,
+    "index" : 4,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "$i2 = staticinvoke <Factorial: int factorial(int)>($i1)"
+  }
+}, {
+  "edge" : {
+    "id" : 11,
+    "source" : 10,
+    "destination" : 12
+  }
+}, {
+  "edge" : {
+    "id" : 12,
+    "source" : 12,
+    "destination" : 8
+  }
+}, {
+  "state" : {
+    "id" : 13,
+    "index" : 5,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "$i3 = i0 * $i2"
+  }
+}, {
+  "state" : {
+    "id" : 14,
+    "index" : 5,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "$i3 = i0 * $i2"
+  }
+}, {
+  "edge" : {
+    "id" : 13,
+    "source" : 11,
+    "destination" : 13
+  }
+}, {
+  "edge" : {
+    "id" : 14,
+    "source" : 11,
+    "destination" : 14
+  }
+}, {
+  "state" : {
+    "id" : 15,
+    "index" : 6,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "return $i3"
+  }
+}, {
+  "edge" : {
+    "id" : 15,
+    "source" : 13,
+    "destination" : 15
+  }
+}, {
+  "state" : {
+    "id" : 16,
+    "index" : 2,
+    "class" : "Factorial",
+    "method" : "main",
+    "returns" : "void",
+    "parameterCount" : 1,
+    "parameters" : [ "java.lang.String[]" ],
+    "sootMethod" : "<Factorial: void main(java.lang.String[])>",
+    "sootStmt" : "return"
+  }
+}, {
+  "edge" : {
+    "id" : 16,
+    "source" : 15,
+    "destination" : 16
+  }
+}, {
+  "state" : {
+    "id" : 17,
+    "index" : 6,
+    "class" : "Factorial",
+    "method" : "factorial",
+    "returns" : "int",
+    "parameterCount" : 1,
+    "parameters" : [ "int" ],
+    "sootMethod" : "<Factorial: int factorial(int)>",
+    "sootStmt" : "return $i3"
+  }
+}, {
+  "edge" : {
+    "id" : 17,
+    "source" : 14,
+    "destination" : 17
+  }
+}, {
+  "edge" : {
+    "id" : 18,
+    "source" : 17,
+    "destination" : 13
+  }
+}, {
+  "edge" : {
+    "id" : 19,
+    "source" : 17,
+    "destination" : 14
+  }
+}, {
+  "edge" : {
+    "id" : 20,
+    "source" : 6,
+    "destination" : 16
+  }
+} ]
