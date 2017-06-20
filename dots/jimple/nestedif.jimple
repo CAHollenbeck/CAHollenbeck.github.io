@@ -1,0 +1,62 @@
+class NestedIf extends java.lang.Object
+{
+
+    void <init>()
+    {
+        NestedIf r0;
+
+        r0 := @this: NestedIf;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+        int i0;
+        java.lang.String $r1;
+        java.io.PrintStream $r2, $r3, $r4, $r5;
+
+        r0 := @parameter0: java.lang.String[];
+
+        $r1 = r0[0];
+
+        i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+
+        if i0 <= 1 goto label2;
+
+        if i0 >= 1 goto label1;
+
+        $r5 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r5.<java.io.PrintStream: void println(java.lang.String)>("true & true!");
+
+        goto label4;
+
+     label1:
+        $r4 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r4.<java.io.PrintStream: void println(java.lang.String)>("true & false!");
+
+        goto label4;
+
+     label2:
+        if i0 <= 5 goto label3;
+
+        $r3 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>("false -> true!");
+
+        goto label4;
+
+     label3:
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r2.<java.io.PrintStream: void println(java.lang.String)>("false -> false!");
+
+     label4:
+        return;
+    }
+}

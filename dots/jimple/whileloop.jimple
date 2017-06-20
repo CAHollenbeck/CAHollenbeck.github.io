@@ -1,0 +1,37 @@
+public class Loop extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        Loop r0;
+
+        r0 := @this: Loop;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] r0;
+        int i0;
+        java.lang.String $r1;
+
+        r0 := @parameter0: java.lang.String[];
+
+        $r1 = r0[0];
+
+        i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+
+     label1:
+        if i0 >= 1000 goto label2;
+
+        i0 = i0 + 1;
+
+        goto label1;
+
+     label2:
+        return;
+    }
+}

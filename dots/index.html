@@ -14,9 +14,23 @@ html {
   stroke-dasharray:5,5;
 }
 
+.hide {
+  display:none;
+}
+
 .info {
   background:white;
   width:100%;
+}
+
+.jimple-window {
+  display:inline-block;
+  background:none;
+  height:100%;
+  right:0px;
+  position:fixed;
+  width:30em;
+  overflow-x:scroll;
 }
 
 .links line {
@@ -81,11 +95,34 @@ html {
   word-wrap: break-word;
 }
 
+  
+#jimplebutton {
+  padding:.1em;
+}
+
+#jimplecode {
+  background:white;
+  bottom:0px;
+  box-shadow: 0px 0px 2px 0px grey;
+  display:inline-block;
+  height:100%;
+  margin:1em;
+  overflow-y:scroll;
+  padding:.5em;
+  position:fixed;
+  width:100%;
+
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
 #nodeinfo {
   height:25em;
   overflow-y:scroll;
-  margin-bottom:.5em;
-  margin-top:.5em;
+  margin-bottom:.1em;
+  margin-top:1em;
 }
 
 
@@ -208,14 +245,39 @@ $(document).ready(function(){
         return 1;
       });
     }
+    function toggle_jimple() {
+      var cond = document.getElementById("jimplebutton").value;
+      if (cond == "Show Jimple") {
+        $("#jimple-window").remove("hide");
+        $('#jimple-window').attr("class", "jimple-window");
+        $('#jimplebutton').val("Hide Jimple");
+        update_jimple();
+      }
+      else if (cond == "Hide Jimple") {
+        console.log("hide jimple")
+        $("#jimple-window").remove("jimple-window");
+        $('#jimple-window').attr("class", "hide");
+        $('#jimplebutton').val("Show Jimple");
+      }
+      else {
+        console.log("jimplebutton error: " + cond);
+      }
+    }
     $("#search").click(findnode);
+    $("#jimplebutton").click(toggle_jimple);
 });
+
+function update_jimple() {
+  jimfile = document.getElementById("jsfile").value;
+  $( "#jimplecode" ).load( "jimple/" + jimfile + ".jimple" );
+}
 
 function JsChange(dropvalue) {
   console.log("Change motif to " + dropvalue.value);
   clear_infopane();
   d3.selectAll("svg > *").remove();
   jsonfile = dropvalue.value + "_out.json";
+  update_jimple();
   render();
   
   $( "#javacode" ).load( dropvalue.value + ".java" );
@@ -332,12 +394,11 @@ d3.json(jsonfile, function(error, graph) {
 });
 }
 
-render();
 
 
 </script>
 <div id="cluster-info">
-  <select id="jsfile" onChange="JsChange(this)">
+  <select id="jsfile" autocomplete="off" onChange="JsChange(this)">
     <option value="hello">Hello World</option>
     <option value="nestedif">2 Level If Else</option>
     <option value="fibonacci">Fibonacci</option>
@@ -346,6 +407,7 @@ render();
     <option value="whileifelse">While If Else</option>
     <option value="whileloop">While Loop</option>
   </select>
+  <input type="button" id="jimplebutton" value="Show Jimple"></input>
   <div id="infocontainer">
     <div id="nodeinfo">
       <div id="info-id" class="info"></div>
@@ -360,12 +422,16 @@ render();
     <!--<input type="text" id="searchval" name="searchnode" placeholder="ID number"></input>
     <button id="search">locate node</button>-->
   </div>
+</div>
 
-
+<div id="jimple-window" class="hide">
+  <div id="jimplecode">
+  </div>
 </div>
 
 <script>
   $( "#javacode" ).load( "hello.java" );
+  render();
 </script>
 
 </body>
