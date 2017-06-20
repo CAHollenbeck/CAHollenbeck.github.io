@@ -168,7 +168,7 @@ html {
 
 <script type="text/javascript">
 var selected = null;
-var jsonfile = "hello_out.json";
+var jsonfile = "fibonacci_out.json";
 
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
@@ -399,9 +399,9 @@ d3.json(jsonfile, function(error, graph) {
 </script>
 <div id="cluster-info">
   <select id="jsfile" autocomplete="off" onChange="JsChange(this)">
+    <option value="fibonacci">Fibonacci</option>
     <option value="hello">Hello World</option>
     <option value="nestedif">2 Level If Else</option>
-    <option value="fibonacci">Fibonacci</option>
     <option value="if">If</option>
     <option value="whileif">While If</option>
     <option value="whileifelse">While If Else</option>
@@ -430,7 +430,7 @@ d3.json(jsonfile, function(error, graph) {
 </div>
 
 <script>
-  $( "#javacode" ).load( "hello.java" );
+  $( "#javacode" ).load( "fibonacci.java" );
   render();
 </script>
 
