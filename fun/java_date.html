@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<link rel="stylesheet" type="text/css" href="jdstyles.css" />
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<title>Java Date</title>
+</head>
+<body>
+	<div id="jdcontainer" class="ctr">
+		<div id="javatitle" class="ctr"><H1>Java Date</H1></div>
+		<div id="javacontain" class="ctr">
+			<canvas id="javaface" width="300" height="300"></canvas> 
+		</div>
+		
+	</div>
+	<div id="jdgo" class="ctr">
+<pre>
+/**********************************
+
+Java Date 2.0  <3
+
+No more generic coffee shop dates!
+Send the Java Date link to your
+crush and let the Love Bot use
+its patented personality algorithms
+to arrange your own personalized
+first date!
+
+Copyright 2014
+
+***********************************/</pre>
+	</div>
+	<div id="startbtn">
+		<button id="tango" class="jdbtn" onclick="animateBot()">Let's<br/>Tango</button>
+	</div>
+
+<script>
+	var c = document.getElementById("javaface");
+	var ctx = c.getContext("2d");
+	ctx.rect(90,80,120,95);
+	
+	// Eyeballs
+	ctx.rect(115,100,20,20);
+	ctx.rect(164,102,17,17);
+	
+	// Teeth
+	ctx.rect(110,140,20,20);
+	ctx.rect(120,140,20,20);
+	ctx.rect(130,140,20,20);
+	ctx.rect(140,140,20,20);
+	ctx.rect(150,140,20,20);
+	ctx.rect(160,140,20,20);
+	ctx.rect(170,140,20,20);
+	ctx.stroke();
+	
+	// Antennas
+	ctx.beginPath();
+	ctx.moveTo(135, 80);
+	ctx.lineTo(100, 45);
+	
+	ctx.moveTo(165, 80);
+	ctx.lineTo(200, 45);
+	ctx.stroke();
+	
+	ctx.beginPath();
+	ctx.arc(97,42,5,0,2*Math.PI);
+	ctx.stroke();
+	
+	ctx.beginPath();
+	ctx.arc(203,42,5,0,2*Math.PI);
+	ctx.stroke();
+	
+	// Heart
+	ctx.beginPath();
+	ctx.moveTo(150, 60);
+	ctx.lineTo(136, 40);
+	ctx.arc(143,40,7,1*Math.PI,0);
+	ctx.stroke();
+	ctx.fillStyle= 'red';
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.moveTo(150, 60);
+	ctx.lineTo(164, 40);
+	ctx.arc(157,40,7,0,-1*Math.PI,true);
+	ctx.stroke();
+	ctx.fillStyle = 'red';
+	ctx.fill();
+
+var animateTimeout;
+
+var usr;
+var usr_bring;
+var food;
+var fun;
+
+function animateBot(){
+	
+	window.setTimeout(function(){ heartChange("pink");pink(); }, 1000 );
+	greeting();
+	btn = document.getElementById("startbtn");
+	btn.setAttribute("hidden","true");
+}
+
+function checkKey(event){
+	event.which = event.which || event.keyCode;
+	if(event.which == 13){
+		jdhi();
+	}
+}
+
+function pink(){
+window.setTimeout( function() { heartChange("red");red(); }, 1000 );
+}
+function red(){
+window.setTimeout( function() { heartChange("pink");pink(); }, 1000 );
+}
+
+function greeting(){ 
+	document.getElementById("jdgo").innerHTML = "<p>Hi! I'm Love Bot!</p>" +
+				"<br/><button class='jdbutton ctr' onclick='saidhi()'>Hi.</button>"; 
+}
+
+function saidhi(){ 
+	document.getElementById("jdgo").innerHTML = "<p>What's your name?</p><br/>" + 
+				"<input type='text' size='15' id='usrname' onkeyup='checkKey(event)'/>&nbsp;<button onclick='jdhi()'>&#x2713;</button>";
+}
+
+function jdhi(){
+	usr = document.getElementById("usrname").value;
+	document.getElementById("jdgo").innerHTML = "<p>Hi, " + usr + 
+				"!</p><p>Nice to meet you.</p><br/><button class='jdbutton ctr' onclick='thanks()'>Thanks.</button>";
+}
+
+function thanks(){
+	document.getElementById("jdgo").innerHTML = "<p>Let's make some small talk...</p><br/>" +
+				"<button class='jdbutton ctr' onclick='smallTalkOk()'>Ok.</button>";
+}
+
+function smallTalkOk(){
+	document.getElementById("jdgo").innerHTML = "<p>Did you get a new<br/>HAIRCUT?</p><br/>" + 
+				"<button class='jdbutton ctr' onclick='usryes(\"HAIRCUT\")'>Yes</button>" +
+				"&nbsp;<button class='jdbutton ctr' onclick='cutno()'>No</button>";
+}
+
+function usryes(item){
+	var outstring =  "<p>I thought so.</p><p>I like your " + item + ".</p><br/><button class='jdbutton ctr' onclick='tofood()'>Thanks.</button>";
+	usr_bring = item;
+	document.getElementById("jdgo").innerHTML = outstring;
+}
+
+function cutno(){
+	document.getElementById("jdgo").innerHTML = "<p>Okay...</p><p>Are you wearing SHOES?</p><br/>" +
+				"<button class='jdbutton ctr' onclick='usryes(\"SHOES\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='shoesno()'>No</button>";
+}
+
+function shoesno(){
+	document.getElementById("jdgo").innerHTML = "<p>Okay...</p><p>Do you have any TEETH?</p><br/>" +
+				"<button class='jdbutton ctr' onclick='usryes(\"TEETH\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='teethno()'>No</button>";
+}
+
+function teethno(){
+	document.getElementById("jdgo").innerHTML = "<p>Okay...</p><p>What about EYEBALLS?</p><br/>" +
+				"<button class='jdbutton ctr' onclick='usryes(\"EYEBALLS\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='eyesno()'>No</button>";
+}
+
+function eyesno(){
+	document.getElementById("jdgo").innerHTML = "<p>Okay...</p><p>Well, you're surviving in an oxygen-rich environment...</p>" +
+				"<p>So you must have LUNGS.</p><button class='jdbutton ctr' onclick='usryes(\"LUNGS\")'>I must.</button>&nbsp;";
+}
+
+function tofood(){
+	document.getElementById("jdgo").innerHTML = "<p>So, I was wondering<br/>if you could tell me...</p>" +
+				"<p>Are you allergic to PEANUTS?</p>" +
+				"<button class='jdbutton ctr' onclick='peanutsno()'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='foodyes(\"PEANUTS\")'>No</button>";
+}
+
+function peanutsno(){
+	document.getElementById("jdgo").innerHTML = "<p>&nbsp;</p>" +
+				"<p>Are you allergic to SHELLFISH?</p>" +
+				"<button class='jdbutton ctr' onclick='fishno()'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='foodyes(\"SHELLFISH\")'>No</button>";
+}
+
+function fishno(){
+	document.getElementById("jdgo").innerHTML = "<p>Hmm. Okay.</p><p>Are you LACTOSE INTOLERANT?</p>" +
+				"<button class='jdbutton ctr' onclick='lactoseno()'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='foodyes(\"LACTOSE\")'>No</button>";
+}
+
+function lactoseno(){
+	document.getElementById("jdgo").innerHTML = "<p>Well...</p><p>Then you must like<br/>DE-IONIZED&nbsp;WATER.</p>" +
+				"<p>Everybody likes<br/>DE-IONIZED&nbsp;WATER.</p><br/>" +
+				"<button class='jdbutton ctr' onclick='foodyes(\"DE-IONIZED WATER\")'>True.</button>";
+}
+
+function foodyes(item){
+	food = item;
+	var outstring =  "<p>Great!</p><br/><button class='jdbutton ctr' onclick='tofun()'>OK.</button>";
+	document.getElementById("jdgo").innerHTML = outstring;
+}
+
+function tofun(){
+	var outstring =  "<p>Let's talk about entertainment now!</p><br/><button class='jdbutton ctr' onclick='goats()'>OK.</button>";
+	document.getElementById("jdgo").innerHTML = outstring;
+}
+
+function goats(){
+	document.getElementById("jdgo").innerHTML = "<p>Do you like feeding<br/>DISABLED GOATS?</p>" +
+				"<button class='jdbutton ctr' onclick='funyes(\"LEPROUS GOAT FARM\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='goatsno()'>No</button>";
+}
+
+function goatsno(){
+	document.getElementById("jdgo").innerHTML = "<p>Do you like watching<br/>FRESHWATER FISH?</p>" +
+				"<button class='jdbutton ctr' onclick='funyes(\"CARP HATCHERY\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='carpno()'>No</button>";
+}
+
+function carpno(){
+	document.getElementById("jdgo").innerHTML = "<p>All right, then...</p><p>Do you like to see<br/>PLANTS GROW?</p>" +
+				"<button class='jdbutton ctr' onclick='funyes(\"GENETICALLY-MODIFIED SOYBEAN FIELDS\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='plantsno()'>No</button>";
+}
+
+function plantsno(){
+	document.getElementById("jdgo").innerHTML = "<p>Well...</p><p>Then you must like<br/>EXOTIC BIRDS.</p>" +
+				"Everybody likes<br/>EXOTIC BIRDS.</p>" +
+				"<button class='jdbutton ctr' onclick='funyes(\"EXOTIC BIRD HOSPITAL\")'>Guilty.</button>&nbsp;";
+}
+
+function funyes(item){
+	fun = item;
+	var outstring =  "<p>Great! Me too!</p><br/><button class='jdbutton ctr' onclick='wrapup()'>Yay!</button>";
+	document.getElementById("jdgo").innerHTML = outstring;
+}
+
+function wrapup(){
+	var outstring =  "<p>You're a joy, " + usr +".</p>" +
+	"<p>On our next date,<br/>let's go to the<br/>" + fun +
+	".</p><p>I'll bring some<br/>" + food + ".</p>" +
+	"<p>You can bring your<br/>" + usr_bring +".</p>" +
+	"<p>We'll have lots of fun!</p><br/><button class='jdbutton ctr' onclick='gettime()'>Oh wow...</button>";
+	document.getElementById("jdgo").innerHTML = outstring;
+}
+
+function gettime(){
+	document.getElementById("jdgo").innerHTML = "<p>Per chance, are you allergic to the SUN?</p>" +
+				"<button class='jdbutton ctr' onclick='sun(\"Y\")'>Yes</button>&nbsp;" +
+				"<button class='jdbutton ctr' onclick='sun(\"N\")'>No</button>";
+}
+
+function sun(answer){
+	var btns = "<button class='jdbutton ctr end' onclick='goodToGo()'>I can't wait!</button><br/><br/>" +
+				"<button class='jdbutton ctr end' onclick='startOver()'>I don't feel right about&nbsp;this...</button>";
+	if(answer == "Y"){
+		document.getElementById("jdgo").innerHTML = "<p>Great!</p><p>I'll pick you up at<br/>CIVIL TWILIGHT!</p>" + btns;
+	}
+	else{
+		document.getElementById("jdgo").innerHTML = "<p>Great!</p><p>I'll pick you up at<br/>NOON!</p>" + btns;
+	}
+}
+
+function startOver(){
+	var outstring =  "<p>I'm sorry! I must have misjudged your taste.</p><p>How about we start over and pretend we just met?</p><br/><button class='jdbutton ctr' onclick='window.location.reload()'>Great idea!</button>";
+	document.getElementById("jdgo").innerHTML = outstring;
+}
+
+function goodToGo(){
+	window.location = "javadate_results.html";
+}
+
+function nuthin(){ return; }
+
+function heartChange( color ){
+	var c = document.getElementById("javaface");
+	var ct = c.getContext("2d");
+
+	// Heart
+	ct.beginPath();
+	ct.moveTo(150, 60);
+	ct.lineTo(136, 40);
+	ct.arc(143,40,7,1*Math.PI,0);
+	ct.fillStyle = color;
+	ct.fill();
+	
+	ct.beginPath();
+	ct.moveTo(150, 60);
+	ct.lineTo(164, 40);
+	ct.arc(157,40,7,0,-1*Math.PI,true);
+	ct.fillStyle = color;
+	ct.fill();
+}
+	
+</script>
+
+
+</body>
+</html>
