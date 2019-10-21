@@ -1,5 +1,27 @@
 #ch_footer {
-	position:absolute;
-	bottom:0px;
-	color:lightgray;
+  position:absolute;
+  bottom:0px;
+  color:lightgray;
+}
+
+.nbmd {
+  white-space:nowrap;
+}
+
+.smalltitle {
+  color:#6E6E6E;
+}
+
+.sec {
+  color:#0088CC;
+  text-decoration:none;
+}
+
+.ft {
+  color:darkgray;
+}
+
+.todo {
+  color:red;
+  font-weight:bold;
 }
