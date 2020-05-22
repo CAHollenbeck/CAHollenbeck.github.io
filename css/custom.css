@@ -21,7 +21,22 @@
   color:darkgray;
 }
 
+.important {
+  border:1px solid darkgray;
+  padding:1em;
+}
+
 .todo {
   color:red;
   font-weight:bold;
+}
+
+.bp {
+  margin-bottom:15em;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
