@@ -40,3 +40,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.profpic {
+  float:right;
+  margin-left:1em;
+  margin-bottom:1em;
+}
